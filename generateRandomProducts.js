@@ -106,15 +106,22 @@ const brands = [
   'Foot Locker',
 ]
 
-const random1000Products = Array.from({ length: 1 }, () => ({
-  id: faker.datatype.uuid(),
-  artNumber: faker.random.numeric(100000000000),
-  name: faker.commerce.productName(),
-  brand: faker.helpers.arrayElement(brands),
-  weight: faker.random.numeric(10000),
-  quantity: faker.random.numeric(1000),
-  price: faker.commerce.price(),
-  stock: faker.random.numeric(10000),
-}))
+const random1000Products = Array.from({ length: 1000 }, createRandomProduct)
 
-console.log(random1000Products)
+function createRandomProduct() {
+  return {
+    id: faker.datatype.uuid(),
+    artNumber: parseInt(faker.random.numeric(12)),
+    name: faker.commerce.productName(),
+    brand: faker.helpers.arrayElement(brands),
+    weight: parseInt(faker.random.numeric(4)),
+    quantity: parseInt(faker.random.numeric(4)),
+    price: faker.commerce.price(),
+    stock: parseInt(faker.random.numeric(4)),
+  }
+}
+
+fs.writeFileSync(
+  path.join(__dirname, 'data.json'),
+  JSON.stringify(random1000Products)
+)
