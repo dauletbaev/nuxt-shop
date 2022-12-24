@@ -2,7 +2,7 @@
   <div class="loading">
     <div class="loading__container">
       <div class="loading__container__item">
-        <div class="loading__container__item__spinner"></div>
+        <div class="loading__container__item__spinner" />
       </div>
     </div>
   </div>

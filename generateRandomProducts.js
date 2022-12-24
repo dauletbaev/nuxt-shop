@@ -106,6 +106,7 @@ const brands = [
   'Foot Locker',
 ]
 
+// Generate fake data
 const random1000Products = Array.from({ length: 1000 }, createRandomProduct)
 
 function createRandomProduct() {
@@ -116,6 +117,7 @@ function createRandomProduct() {
     brand: faker.helpers.arrayElement(brands),
     weight: parseInt(faker.random.numeric(4)),
     quantity: parseInt(faker.random.numeric(4)),
+    image: faker.image.abstract(640, 480, true),
     price: faker.commerce.price(),
     stock: parseInt(faker.random.numeric(4)),
   }

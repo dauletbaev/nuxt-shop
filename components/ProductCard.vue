@@ -7,11 +7,11 @@ defineProps<{
 <template>
   <div class="product__card">
     <div class="product__card__image">
-      <img :src="product.thumbnail" :alt="product.title" />
+      <img class="loading" :src="product.image" :alt="product.name" />
     </div>
     <div class="product__card__info">
-      <h3>{{ product.title }}</h3>
-      <p>{{ product.description }}</p>
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.brand }}</p>
       <p class="product__card__price">{{ product.price }}</p>
     </div>
   </div>
@@ -72,7 +72,9 @@ defineProps<{
   content: "$";
 }
 
-.product__card__price::after {
-  content: ".00";
+.loading {
+  /* Nice way of handling html's bult-in img element's loading state */
+  background: transparent url(~/assets/loading.gif) no-repeat scroll center center;
+  min-height: 178px;
 }
 </style>

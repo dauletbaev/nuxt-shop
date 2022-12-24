@@ -1,20 +1,25 @@
 interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  stock: number;
-  brand: string;
-  category: string;
-  thumbnail: string;
-  images: string[];
+  id: number
+  artNumber: number
+  name: string
+  brand: string
+  weight: number
+  image: string
+  price: number
+  quantity: number
+  stock: number
 }
 
 interface AllProductsResponse {
-  limit: number;
-  skip: number;
-  total: number;
-  products: Product[];
+  limit: number
+  skip: number
+  total: number
+  products: Product[]
+}
+
+interface Filter {
+  search: string
+  brand: string
+  minPrice: number
+  maxPrice: number
 }

@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
-    "nuxt": "3.0.0"
+    "nuxt": "3.0.0",
+    "nuxt-icon": "^0.1.8"
   }
 }
